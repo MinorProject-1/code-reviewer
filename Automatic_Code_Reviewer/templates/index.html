@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Reviewer</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Automatic Code Reviewer</h1>
+    <form action="/review" method="post">
+        <label for="language">Select Language:</label>
+        <select name="language" id="language">
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+        </select>
+        <br><br>
+        <label for="code">Enter your code:</label><br>
+        <textarea name="code" id="code" rows="10" cols="50"></textarea>
+        <br><br>
+        <input type="submit" value="Review Code">
+    </form>
+    <div id="result">
+        {% if result %}
+            <h2>Review Result:</h2>
+            <pre>{{ result }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>
